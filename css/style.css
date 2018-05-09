@@ -1,0 +1,217 @@
+
+
+
+h1 {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: 2.5em;
+    color: #314859;
+}
+h2 {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+}
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+}
+footer {
+    font-size: 14px;
+    color: #f7f7f7;
+    line-height: 1.71;
+}
+.mainContent {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.workspaces {
+    margin-bottom: 1rem;
+}
+
+.block-inner-2 {
+    margin-left: 5%;
+    margin-right: 5%;
+    line-height: 1.5;
+}
+
+section {
+    padding: 70px 0;
+}
+
+.panel {
+    color: white;
+    width: 100%;
+}
+
+input {
+    color: #638c6e;
+    height: 50px;
+    background-color: #ffffff;
+    border: solid 1px #c1e2c7;
+}
+input, label {
+    display: block;
+}
+select {
+    color: #638c6e;
+    height: 50px;
+    border-radius: 0px;
+    -webkit-appearance: none;
+    background-color: white;
+    padding: 10px;
+    border: solid 1px #c1e2c7;
+}
+label {
+    font-size: 16px;
+    font-weight: 300;
+}
+.form-inline {
+    /*    width: 90vw;*/
+    margin-left: 10%;
+    margin-right: 10%; 
+    padding: 50px 0 50px 0;
+    display: flex;
+}
+.form-group {
+    display: flex;
+}
+.item, .link {
+     width: 15vw; 
+}
+.color {
+    width: 7.5vw;
+}
+.size {
+    width: 6vw;
+}
+.quantity {
+    width: 72px;
+}
+.brand {
+    width: 9vw;
+}
+.gender {
+    width: 7.5vw;
+}
+.type {
+    width: 7.5vw;
+}
+
+.add {
+    width: 7.5vw;
+    height: 50px;
+    background-color: #89b9b6;
+}
+.add:hover {
+    background-color: #71C4C0;
+}
+.line {
+    height: 0;
+    border: solid 1px #c1e2c7;
+}
+
+.row.wishTitle {
+    color: #9dc1a5;
+    margin-top: 53px;
+    margin-bottom: 31px;
+}
+ul.wishlist {
+    padding: 0;
+    margin-left: 0;
+}
+ul.wishlist li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 22px;
+    font-size: 20px;
+    color: #7f7f7f;
+    display: block;
+}
+
+.text-truncate {
+  width: 24%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.delete a{
+    color: #917285;
+}
+
+footer {
+    height: 26%;
+    color: white;
+    background-color: #314859;
+    padding: 50px;
+
+}
+@media screen and (max-width: 768px) {
+    .row.wishTitle {
+        display:none;
+    }
+    .panel {
+        color: black;
+    }
+    .form-inline {
+        padding: 0;
+/*        display: ;*/
+        margin-left: 8%;
+    }
+    .form-group{
+        display: block;
+    }
+    label, input, select {
+        font-size: 12px;
+    }
+    
+    .item, .link {
+        width: 15vw; 
+    }
+    .gender, .color {
+        width: 7.5vw;
+    }
+    .size, .quantity {
+        width: 6vw;
+    }
+    .brand {
+        width: 100%;
+    }
+    .add {
+        width: 9vw;
+    }
+    
+    
+    }
+
+@media screen and (max-width: 375px) {
+    .row.wishTitle {
+        display:none;
+    }
+    .form-inline {
+        padding: 0;
+        display: block;
+        margin-left: 3%;
+    }
+    .form-group{
+        display: block;
+    }
+    .item, .link {
+        width: 100%; 
+    }
+    .gender, .color {
+        width: 30%;
+    }
+    .size, .quantity {
+        width: 20%;
+    /*    width: 5.7;*/
+    }
+    .brand {
+        width: 100%;
+    }
+    .add {
+        width: 100%;
+    }
+    
+}

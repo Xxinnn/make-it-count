@@ -1,0 +1,63 @@
+/* Nav overrides */
+.navbar-default .navbar-nav>.active>a{ background: none; }
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    background:none;
+    color: black;
+}
+.navbar-default .navbar-nav>.active>a:hover {
+/*    color: #ff61da;*/
+    background: none;
+}
+
+.navbar-default ul.nav li a:hover {
+    color: #9FBED4;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus {
+/*    color: #2D8BCD;*/
+    background: none;
+}
+/* Remove button like hamburger menu on nav */
+.navbar-default .navbar-toggle { border: none;}
+/* Nav mobile remove bg */
+.navbar-default { background: none;}
+
+.navbar-default
+{
+    background-color: #314859;
+    border-color:transparent;
+    padding: 30px 55px;
+}
+.navbar-default .navbar-brand
+{
+    color:white;
+    font-family:"Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+/*    height: 96px;*/
+}
+.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:active,.navbar-default .navbar-brand.active
+{
+/*    color:#B997BE;*/
+}
+.navbar-default .navbar-collapse
+{
+    border-color:rgba(255,255,255,.02)
+}
+
+.navbar-default .navbar-toggle .icon-bar
+{
+    background-color:#fff
+}
+
+.navbar-default .nav li a
+{
+    font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    /*text-transform:uppercase;*/
+    font-weight:400;
+    letter-spacing:1px;
+    color:white;
+}
+
+
+
+
