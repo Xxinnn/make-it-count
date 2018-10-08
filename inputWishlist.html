@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Make it Count</title>
+        
+<!--        bootstrap core css-->
+       
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/fontawesome-all.min.css" />
+         
+          
+<!--          custom css-->
+        <link rel="stylesheet" type="text/css" href="css/overrides.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link type="text/css" rel="stylesheet" href="css/responsive-tabs.css" />
+        <link type="text/css" rel="stylesheet" href="css/tab.css" />
+        
+        <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+        
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-firestore.js"></script>
+    </head>
+    
+    <body id="page-top">
+<!--==============================================================-->
+<!-- nav -->
+<!--==============================================================-->
+        <nav id="mainNav" class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="index.html">Make It Count</a>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                   <ul class="nav navbar-nav navbar-right">
+                       <li class="hidden"><a href="#page-top"></a></li>
+                       <li><a class="page-scroll" href="#overview">ABOUT US</a></li>
+                       <li><a class="page-scroll" href="#team">PARTNER</a></li>
+                       <li><a class="page-scroll" href="#spring">HELP</a></li>
+                   </ul>
+                </div>
+            </div>
+        </nav>
+<!--==============================================================-->
+<!-- INPUT -->
+<!--==============================================================-->        
+        
+        <section class="input">
+          <div class="row workspaces">
+              <div class="col-12 col-md-12 block">
+                  <h1 style="line-height: 2; margin-left: 10%">Add a Wish</h1>
+                      <div id="responsiveTabsDemo">
+                        <ul id="tabs">
+                            <li id="clothingTab"><a href="#clothing">Clothing</a></li>
+                            <li id="shoesTab"><a href="#shoes">Shoes</a></li>
+                            <li id="productsTab"><a href="#products">Products</a></li>
+                            <li id="amazonLinkTab"><a href="#Amazon">Import your Amazon wishlist</a></li>
+                        </ul>
+
+
+                <div id="clothing" class="panel">
+                  <form class="form-inline" action="/action_page.php">
+                     <div class="form-group">
+                      <label>Item Name</label>
+                      <input type="text" id="item" class="item">
+                      </div>
+                      <div class="form-group">
+                      <label>Gender</label>
+                      <select id="gender" class="gender">
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                      <label>Size</label>
+                      <input type="text" id="size" class="size">
+                      </div>
+                      <div class="form-group">
+                      <label>Color</label>
+                      <input type="text" id="color" class="color">
+                      </div>
+                      <div class="form-group">
+                      <label>Brand</label>
+                      <input type="text" id="brand" class="brand">
+                      </div>
+                      <div class="form-group">
+                      <label>Quantity</label>
+                      <input type="text" id="quantity" class="quantity">
+                      </div>
+                      <div class="form-group">
+                      <label>Link</label>
+                      <input type="text" id="link" placeholder="optional" class="link">
+                      </div>
+                      <div class="form-group">
+                      <label>&emsp;</label>
+                      <button type="button" class="add" onclick="addWishlist()">Add</button>
+                      </div>         
+                  </form>
+                </div>
+            
+            <div id="shoes" class="panel">
+              <form class="form-inline" action="/action_page.php">
+                     <div class="form-group">
+                      <label>Item Name</label>
+                      <input type="text" id="item_s" class="item">
+                      </div>
+
+                      <div class="form-group">
+                      <label>Gender</label>
+                      <select id="gender_s" class="gender">
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                        </select>
+                      </div>
+
+                     <div class="form-group">
+                      <label>Size</label>
+                      <input type="text" id="size_s" class="size">
+                      </div>
+
+                     <div class="form-group">
+                      <label>Color</label>
+                      <input type="text" id="color_s" class="color">
+                      </div>
+
+                      <div class="form-group">
+                      <label>Brand</label>
+                      <input type="text" id="brand_s" class="brand">
+                      </div>
+
+                      <div class="form-group">
+                      <label>Quantity</label>
+                      <input type="text" id="quantity_s" class="quantity">
+                      </div>
+
+                      <div class="form-group">
+                      <label>Link</label>
+                      <input type="text" id="link_s" placeholder="optional" class="link">
+                      
+                      </div>
+
+                      <div class="form-group">
+                      <label>&emsp;</label>
+                      <button type="button" class="add" onclick="addWishlist_s()">Add</button>
+                      </div>         
+                  </form>
+            </div>
+            
+            <div id="products" class="panel">
+              <form class="form-inline" action="/action_page.php">
+                     <div class="form-group">
+                      <label>Item Name</label>
+                      <input type="text" id="item_p" class="item">
+                      </div>
+
+                      <div class="form-group">
+                      <label>Type</label>
+                      <select id="type_p" class="type">
+                          <option value="electronic">Electronic</option>
+                          <option value="home">Home</option>
+                          <option value="baby">Baby</option>
+                          
+                        </select>
+                      </div>
+
+                     <div class="form-group">
+                      <label>Size</label>
+                      <input type="text" id="size_p" class="size">
+                      </div>
+
+                     <div class="form-group">
+                      <label>Color</label>
+                      <input type="text" id="color_p" class="color">
+                      </div>
+
+                      <div class="form-group">
+                      <label>Brand</label>
+                      <input type="text" id="brand_p" class="brand">
+                      </div>
+
+                      <div class="form-group">
+                      <label>Quantity</label>
+                      <input type="text" id="quantity_p" class="quantity">
+                      </div>
+
+                      <div class="form-group">
+                      <label>Link</label>
+                      <input type="text" id="link_p" placeholder="optional" class="link">
+                      
+                      </div>
+
+                      <div class="form-group">
+                      <label>&emsp;</label>
+                      <button type="button" class="add" onclick="addWishlist_p()">Add</button>
+                      </div>         
+                  </form>
+            </div>
+            
+            <div id="Amazon" class="panel">
+              <form class="form-inline" action="/action_page.php">
+                     <div class="form-group">
+                      <label>Amazon Link</label>
+                      <input type="text" id="link_a" class="link">
+                      </div>
+                      <div class="form-group">
+                      <label>&emsp;</label>
+                      <button type="button" class="add" onclick="addWishlist_a()">Add</button>
+                      </div>
+                </form>
+            </div>
+          </div>
+         
+        </div>
+            
+        </div>
+        
+        </section>
+        
+        
+<!--==============================================================-->
+<!-- OUTPUT -->
+<!--==============================================================--> 
+        <section class="output">
+        <div class="mainContent">
+          <div class="row workspaces">
+              <div class="col-12 col-md-12 block">
+                  <div class="block-inner-2">
+                      <h1 style="line-height: 2">Your Wishlist</h1>
+                      <div class="line"></div>
+<!--                      clothing wishlist-->
+                      <div class="row wishTitle">
+                         <div class="col-md-3">Clothing</div>
+                         <div class="col-md-1">Size</div>
+                         <div class="col-md-1">Color</div>
+                         <div class="col-md-2">Brand</div>
+                         <div class="col-md-1">Quantity</div>
+                         <div class="col-md-3">Link(optional)</div>
+                         <div class="col-md-1">Edit</div>
+                      </div>
+<!--                         use as a test-->
+                      <ul class="wishlist" id="clothingList">
+                        
+                         <li>
+                            <div class="row">
+                            <div class="col-md-3 col-xs-4">Sneaker</div>
+                            <div class="col-md-1 col-xs-4">8.5</div>
+                            <div class="col-md-1 col-xs-4">white</div>
+                            <div class="col-md-2 col-xs-4">Vans</div>
+                            <div class="col-md-1 col-xs-4">1</div>
+                            <div class="col-md-3 col-xs-4 text-truncate"><a href="https://css-tricks.com/snippets/css/media-queries-for-standard-devices/">https://css-tricks.com/snippets/css/media-queries-for-standard-devices/</a></div>
+                            <div class="col-md-1 col-xs-4 delete" ><a href="">Delete</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                    
+<!--                    shoes wishlist-->
+                    <div class="row wishTitle">
+                         <div class="col-md-3">Shoes</div>
+                         <div class="col-md-1">Size</div>
+                         <div class="col-md-1">Color</div>
+                         <div class="col-md-2">Brand</div>
+                         <div class="col-md-1">Quantity</div>
+                         <div class="col-md-3">Link(optional)</div>
+                         <div class="col-md-1">Edit</div>
+                    </div>
+                      
+                      <ul id="shoesList" class="wishlist">
+<!--                          <li></li>-->
+                         
+                      </ul>
+                      <div class="line"></div>
+                      
+<!--                      products wishlist-->
+                      <div class="row wishTitle">
+                         <div class="col-xs-3">Products</div>
+                         <div class="col-md-1">Size</div>
+                         <div class="col-md-1">Color</div>
+                         <div class="col-md-2">Brand</div>
+                         <div class="col-md-1">Quantity</div>
+                         <div class="col-md-3">Link(optional)</div>
+                         <div class="col-md-1">Edit</div>
+                    </div>
+                      
+                      <ul id="productsList" class="wishlist">
+<!--                          <li></li>-->
+                     
+                      </ul>
+                      <div class="line"></div>
+                      
+                      <div class="row wishTitle">
+                          <div class="col-md-11">Amazon Link</div>
+                          <div class="col-md-1">Edit</div>
+                      </div>
+                      
+                      <ul id="amazonLinkList" class="wishlist">
+<!--
+                          <li>
+                             <div class="row">
+                              <div class="col-md-11 col-xs-12">
+                              <a href="">https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_word-wrap</a>
+                              </div>
+                              <div class="col-md-1 col-xs-12 delete">
+                                  <a href="">Delete</a>
+                              </div>
+                              </div>
+                          </li>
+-->
+
+                     
+                      </ul>
+                      
+
+                  </div>
+              </div>
+            
+            </div>
+        </div>
+        </section>
+    </body>
+    
+    <footer>
+       <div class="mainContent">
+        <div class="row workspaces">
+            <div class="col-md-3">
+                <p>About us</p>
+                <p>Contact</p>
+                <p>Terms &amp; Conditions</p>
+                <p>Log in/Sign up</p>
+            </div>
+            <div class="col-md-2">
+                <p><i class="fab fa-facebook-f"></i>&emsp;Facebook</p>
+                <p><i class="fab fa-twitter">&emsp;</i>Twitter</p>
+                <p><i class="fab fa-instagram"></i>&emsp;Instagram</p>
+            </div>
+            <div class="col-md-4">
+                <p>Subscribe to our newsletter</p>
+                <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                      <!--<div class="input-group-prepend">-->
+                      <!--  <span class="input-group-text" id="basic-addon1">Ok</span>-->
+                      <!--</div>-->
+                    </div>
+                <!--<input type="text" placeholder="Email Address" style="border-radius: 4px; height: 40px">-->
+                <!--<button type="button" style="background-color: white; color: #314859; border-radius: 4px; height: 40px; width: 60px">OK</button>-->
+                
+            </div>
+            <div class="col-md-3">
+                <p>497 Evergreen Rd. Roseville, CA 95673</p>
+                <p>+44 345678903</p>
+                <p>adobexd@mail.com</p>
+                <p>Make It Count 2018</p>
+            </div>
+            
+            
+        </div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.responsiveTabs.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/inputWishlist.js"></script>
+    
+</html>

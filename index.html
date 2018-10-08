@@ -1,348 +1,206 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Make it Count</title>
+        <title>Make It Count</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         
-<!--        bootstrap core css-->
-       
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="css/fontawesome-all.min.css" />
-         
-          
-<!--          custom css-->
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+        
+        
+        <link rel="stylesheet" href="css/style_landing3.css">
         <link rel="stylesheet" type="text/css" href="css/overrides.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link type="text/css" rel="stylesheet" href="css/responsive-tabs.css" />
-        <link type="text/css" rel="stylesheet" href="css/tab.css" />
         
-        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
-       <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-firestore.js"></script>
+        
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+
     </head>
-    
-    <body id="page-top">
-<!--==============================================================-->
+    <header>
+        
+    </header>
+    <body>
+       <!--==============================================================-->
 <!-- nav -->
 <!--==============================================================-->
-        <nav id="mainNav" class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand page-scroll" href="#top">Make It Count</a>
-                </div>
-                
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                   <ul class="nav navbar-nav navbar-right">
-                       <li class="hidden"><a href="#page-top"></a></li>
-                       <li><a class="page-scroll" href="#overview">ABOUT US</a></li>
-                       <li><a class="page-scroll" href="#team">PARTNER</a></li>
-                       <li><a class="page-scroll" href="#spring">HELP</a></li>
-                   </ul>
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
+         <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src="img/logo_r.png" width="42" height="60" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#about_us" id="aboutNav">ABOUT US</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#partner" id="partnerNav">PARTNER</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">LOGIN</a>
+              </li>
+            </ul>
+            
+          </div>
             </div>
         </nav>
-<!--==============================================================-->
-<!-- INPUT -->
-<!--==============================================================-->        
-        
-        <section class="input">
-          <div class="row workspaces">
-              <div class="col-12 col-md-12 block">
-                  <h1 style="line-height: 2; margin-left: 10%">Add a Wish</h1>
-                      <div id="responsiveTabsDemo">
-                        <ul id="tabs">
-                            <li id="clothingTab"><a href="#clothing">Clothing</a></li>
-                            <li id="shoesTab"><a href="#shoes">Shoes</a></li>
-                            <li id="productsTab"><a href="#products">Products</a></li>
-                            <li id="amazonLinkTab"><a href="#Amazon">Import your Amazon wishlist</a></li>
-                        </ul>
-
-
-                <div id="clothing" class="panel">
-                  <form class="form-inline" action="/action_page.php">
-                     <div class="form-group">
-                      <label>Item Name</label>
-                      <input type="text" id="item" class="item">
-                      </div>
-                      <div class="form-group">
-                      <label>Gender</label>
-                      <select id="gender" class="gender">
-                          <option value="male">Male</option>
-                          <option value="female">Female</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                      <label>Size</label>
-                      <input type="text" id="size" class="size">
-                      </div>
-                      <div class="form-group">
-                      <label>Color</label>
-                      <input type="text" id="color" class="color">
-                      </div>
-                      <div class="form-group">
-                      <label>Brand</label>
-                      <input type="text" id="brand" class="brand">
-                      </div>
-                      <div class="form-group">
-                      <label>Quantity</label>
-                      <input type="text" id="quantity" class="quantity">
-                      </div>
-                      <div class="form-group">
-                      <label>Link</label>
-                      <input type="text" id="link" placeholder="optional" class="link">
-                      </div>
-                      <div class="form-group">
-                      <label>&emsp;</label>
-                      <button type="button" class="add" onclick="addWishlist()">Add</button>
-                      </div>         
-                  </form>
+       
+        <div class="landing container">
+                
+                <div id="catching_text" class="row">
+                        <div class="title col-sm-12"><h1>Make It Count</h1></div>
+                        <div class="text1 col-sm-5 mx-auto"><h3>We can't help everyone, but everyone can help someone</h3></div>
                 </div>
-            
-            <div id="shoes" class="panel">
-              <form class="form-inline" action="/action_page.php">
-                     <div class="form-group">
-                      <label>Item Name</label>
-                      <input type="text" id="item_s" class="item">
-                      </div>
-
-                      <div class="form-group">
-                      <label>Gender</label>
-                      <select id="gender_s" class="gender">
-                          <option value="male">Male</option>
-                          <option value="female">Female</option>
-                        </select>
-                      </div>
-
-                     <div class="form-group">
-                      <label>Size</label>
-                      <input type="text" id="size_s" class="size">
-                      </div>
-
-                     <div class="form-group">
-                      <label>Color</label>
-                      <input type="text" id="color_s" class="color">
-                      </div>
-
-                      <div class="form-group">
-                      <label>Brand</label>
-                      <input type="text" id="brand_s" class="brand">
-                      </div>
-
-                      <div class="form-group">
-                      <label>Quantity</label>
-                      <input type="text" id="quantity_s" class="quantity">
-                      </div>
-
-                      <div class="form-group">
-                      <label>Link</label>
-                      <input type="text" id="link_s" placeholder="optional" class="link">
-                      
-                      </div>
-
-                      <div class="form-group">
-                      <label>&emsp;</label>
-                      <button type="button" class="add" onclick="addWishlist_s()">Add</button>
-                      </div>         
-                  </form>
+                <div class="row">
+                <div class="col-md-6 col-sm-12">
+                   <div class="select_box">
+                    <div id="left1" class="sub-title col col-sm-12">
+                        FOR VETERANS
+                    </div>
+                    <div id="left2" class="text2 col-sm-12">
+                      Put anything you need into the list for a wish  
+                    </div>
+                    <div class="col-12">
+                        <a href="signup.html" class="btn btn-primary">
+                        CREATE A WISHLIST
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-sm-12">
+                   <div class="select_box2">
+                    <div id="right1" class="sub-title col col-sm-12">
+                        FOR DONORS
+                    </div>
+                    <div id="right2" class="text2 col-sm-12">
+                        Give exact what is needed to those who need it
+                    </div>
+                    <div id=right3 class="col-12">
+                        <a href="wishlists.html" class="btn btn-secondary">
+                        BROWSE A WISHLIST
+                        </a>
+                    </div>
+                    </div>
+                </div>
             </div>
-            
-            <div id="products" class="panel">
-              <form class="form-inline" action="/action_page.php">
-                     <div class="form-group">
-                      <label>Item Name</label>
-                      <input type="text" id="item_p" class="item">
-                      </div>
-
-                      <div class="form-group">
-                      <label>Type</label>
-                      <select id="type_p" class="type">
-                          <option value="electronic">Electronic</option>
-                          <option value="home">Home</option>
-                          <option value="baby">Baby</option>
-                          
-                        </select>
-                      </div>
-
-                     <div class="form-group">
-                      <label>Size</label>
-                      <input type="text" id="size_p" class="size">
-                      </div>
-
-                     <div class="form-group">
-                      <label>Color</label>
-                      <input type="text" id="color_p" class="color">
-                      </div>
-
-                      <div class="form-group">
-                      <label>Brand</label>
-                      <input type="text" id="brand_p" class="brand">
-                      </div>
-
-                      <div class="form-group">
-                      <label>Quantity</label>
-                      <input type="text" id="quantity_p" class="quantity">
-                      </div>
-
-                      <div class="form-group">
-                      <label>Link</label>
-                      <input type="text" id="link_p" placeholder="optional" class="link">
-                      
-                      </div>
-
-                      <div class="form-group">
-                      <label>&emsp;</label>
-                      <button type="button" class="add" onclick="addWishlist_p()">Add</button>
-                      </div>         
-                  </form>
-            </div>
-            
-            <div id="Amazon" class="panel">
-              <form class="form-inline" action="/action_page.php">
-                     <div class="form-group">
-                      <label>Amazon Link</label>
-                      <input type="text" id="link_a" class="link">
-                      </div>
-                      <div class="form-group">
-                      <label>&emsp;</label>
-                      <button type="button" class="add" onclick="addWishlist_a()">Add</button>
-                      </div>
-                </form>
-            </div>
-          </div>
-         
         </div>
-            
-        </div>
-        
-        </section>
-        
-        
-<!--==============================================================-->
-<!-- OUTPUT -->
-<!--==============================================================--> 
-        <section class="output">
         <div class="mainContent">
-          <div class="row workspaces">
-              <div class="col-12 col-md-12 block">
-                  <div class="block-inner-2">
-                      <h1 style="line-height: 2">Your Wishlist</h1>
-                      <div class="line"></div>
-<!--                      clothing wishlist-->
-                      <div class="row wishTitle">
-                         <div class="col-md-3">Clothing</div>
-                         <div class="col-md-1">Size</div>
-                         <div class="col-md-1">Color</div>
-                         <div class="col-md-2">Brand</div>
-                         <div class="col-md-1">Quantity</div>
-                         <div class="col-md-3">Link(optional)</div>
-                         <div class="col-md-1">Edit</div>
-                      </div>
-<!--                         use as a test-->
-                      <ul class="wishlist" id="clothingList">
-                        
-                         <li>
-                            <div class="row">
-                            <div class="col-md-3 col-xs-4">Sneaker</div>
-                            <div class="col-md-1 col-xs-4">8.5</div>
-                            <div class="col-md-1 col-xs-4">white</div>
-                            <div class="col-md-2 col-xs-4">Vans</div>
-                            <div class="col-md-1 col-xs-4">1</div>
-                            <div class="col-md-3 col-xs-4 text-truncate"><a href="https://css-tricks.com/snippets/css/media-queries-for-standard-devices/">https://css-tricks.com/snippets/css/media-queries-for-standard-devices/</a></div>
-                            <div class="col-md-1 col-xs-4 delete" ><a href="">Delete</a></div>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="line"></div>
-                    
-<!--                    shoes wishlist-->
-                    <div class="row wishTitle">
-                         <div class="col-md-3">Shoes</div>
-                         <div class="col-md-1">Size</div>
-                         <div class="col-md-1">Color</div>
-                         <div class="col-md-2">Brand</div>
-                         <div class="col-md-1">Quantity</div>
-                         <div class="col-md-3">Link(optional)</div>
-                         <div class="col-md-1">Edit</div>
+        <div id="about_us" class="about_us container">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="real_pic">
+                        <img src="img/jason-leung-718209-unsplash.jpg" class="thankyou" alt="">
                     </div>
-                      
-                      <ul id="shoesList" class="wishlist">
-<!--                          <li></li>-->
-                         
-                      </ul>
-                      <div class="line"></div>
-                      
-<!--                      products wishlist-->
-                      <div class="row wishTitle">
-                         <div class="col-xs-3">Products</div>
-                         <div class="col-md-1">Size</div>
-                         <div class="col-md-1">Color</div>
-                         <div class="col-md-2">Brand</div>
-                         <div class="col-md-1">Quantity</div>
-                         <div class="col-md-3">Link(optional)</div>
-                         <div class="col-md-1">Edit</div>
+                </div>
+                <div class="col-md-6  col-xs-12 profile">
+                   <div class="text">
+                   <h2>Make it Count</h2>
+                    <h4>We are Make it Count, a start-up with the dream to give exactly what is needed to those who need it. Make it Count is a space where individuals in need can create a wish lists on an e-commerce site. Donors are then able to go on our website and buy products, making every dollar of their donation count.
+                       </h4>
+                       <h4>Our advantage is that we provide a unique donating tool that is personalized for each individual, allowing donors to give exact what is needed to those who need it.</h4>
                     </div>
-                      
-                      <ul id="productsList" class="wishlist">
-<!--                          <li></li>-->
-                     
-                      </ul>
-                      <div class="line"></div>
-                      
-                      <div class="row wishTitle">
-                          <div class="col-md-11">Amazon Link</div>
-                          <div class="col-md-1">Edit</div>
-                      </div>
-                      
-                      <ul id="amazonLinkList" class="wishlist">
-<!--
-                          <li>
-                             <div class="row">
-                              <div class="col-md-11 col-xs-12">
-                              <a href="">https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_word-wrap</a>
-                              </div>
-                              <div class="col-md-1 col-xs-12 delete">
-                                  <a href="">Delete</a>
-                              </div>
-                              </div>
-                          </li>
--->
-
-                     
-                      </ul>
-                      
-
-                  </div>
-              </div>
-            
+                </div>
             </div>
         </div>
-        </section>
+        </div>
+        <div class="mainContent">
+        <div id="partner" class="partner container">
+           <div class="sub-title row">
+                  <div class="col-sm-12">
+               <h2>Partner</h2>
+               </div>
+           </div>
+           <div class="row">
+            <div class="col-md-4">
+                   <div class="profile">
+                       <div class="logo">
+                           <img src="img/undraw_co-working_825n.svg" style="height: 160px;">
+                       </div>
+                       <div class="text">
+                           <h4 class="pname">Veteran’s Place</h4>
+                           <h4>Veterans Place is dedicated to ending homelessness among veterans in the Pittsburgh region. We offer homeless veterans a safe, supportive and regenerative environment as they gain the necessary skills to face real life challenges, secure permanent housing and lead productive and self-sufficient lives.</h4>
+                       </div>
+
+                           <i class="fab fa-instagram"></i>
+                           <i class="fab fa-twitter"></i>
+                           <i class="fab fa-facebook-f"></i>
+                           <a href="http://www.veteransplace.org/"><i class="fas fa-globe"></i></a>
+                   </div>
+               </div>
+               <div class="col-md-4">
+                   <div class="profile">
+                       <div class="logo">
+                           <img src="img/undraw_co-workers_ujs6.svg" style="height: 160px;">
+                       </div>
+                       <div class="text">
+                           <h4 class="pname">Please Join Us</h4>
+                           <h4>We are always looking for a new partner. Please shot us a message!</h4>
+                       </div>
+                       <i class="fab fa-instagram"></i>
+                           <i class="fab fa-twitter"></i>
+                           <i class="fab fa-facebook-f"></i>
+                           <i class="fas fa-globe"></i>
+
+                   </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="profile">
+                       <div class="logo">
+                           <img src="img/undraw_btc_p2p_lth5.svg" style="height: 160px;">
+                       </div>
+                       <div class="text">
+                           <h4 class="pname">Please Join Us</h4>
+                           <h4>We are always looking for a new partner. Please shot us a message!</h4>
+                       </div>
+                       <i class="fab fa-instagram"></i>
+                           <i class="fab fa-twitter"></i>
+                           <i class="fab fa-facebook-f"></i>
+                           <i class="fas fa-globe"></i>
+                   </div> 
+               </div>
+               
+           </div>    
+            
+        </div>
+        </div>
     </body>
     
-    <footer>
-       <div class="mainContent">
+    <footer style="background-color: #314859; height: auto; color: white; padding: 50px;">
+        <div class="mainContent">
         <div class="row workspaces">
             <div class="col-md-3">
-                <p>About us</p>
-                <p>Contact</p>
+                <a href="#about_us" id="aboutFooter"><p>About us</p></a>
+                <a href="mailto:official.make.it.count@gmail.com"><p>Contact</p></a>
                 <p>Terms &amp; Conditions</p>
-                <p>Log in/Sign up</p>
+                <a href="signup.html"><p>Log in/Sign up</p></a>
             </div>
             <div class="col-md-2">
                 <p><i class="fab fa-facebook-f"></i>&emsp;Facebook</p>
-                <p><i class="fab fa-twitter">&emsp;</i>Twitter</p>
+                <p><i class="fab fa-twitter"></i>&emsp;Twitter</p>
                 <p><i class="fab fa-instagram"></i>&emsp;Instagram</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" style="display: inline-block">
                 <p>Subscribe to our newsletter</p>
-                <input type="text" placeholder="Email Address" style="border-radius: 4px; height: 40px">
-                <button type="button" style="background-color: white; color: #314859; border-radius: 4px; height: 40px; width: 60px">OK</button>
+                <form class="form-inline">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Ok</span>
+                      </div>
+                    </div>
+                  </form>
+<!--                <input type="text" placeholder="Email Address" style="border-radius: 4px; height: 40px">-->
+<!--                <button type="button" style="background-color: white; color: #314859; border-radius: 4px; height: 40px; width: 60px">OK</button>-->
                 
             </div>
             <div class="col-md-3">
@@ -357,9 +215,25 @@
         </div>
     </footer>
     <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.responsiveTabs.js"></script>
-    <script src="js/tab.js"></script>
-    <script src="js/inputWishlist.js"></script>
+    <script>
+        $("#aboutNav").click(function(){
+            $('html, body').animate({
+                scrollTop: $("#about_us").offset().top
+            }, 1000)
+        })
+        
+        $("#partnerNav").click(function(){
+            $('html, body').animate({
+                scrollTop: $("#partner").offset().top
+            }, 1000)
+        })
+    
+         $("#aboutFooter").click(function(){
+            $('html, body').stop().animate({
+                scrollBottom: $("#about").offset().top
+            }, 1000)
+        })
+    </script>
+    
     
 </html>
